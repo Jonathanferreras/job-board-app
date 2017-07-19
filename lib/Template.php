@@ -4,9 +4,9 @@
     protected $template;
 
     //var passed in
-    protected $vars = array();
+    protected $vars = Array();
 
-    public function __constructor($template) {
+    public function __construct($template) {
       $this->template = $template;
     }
 
@@ -19,7 +19,7 @@
     }
 
     public function __toString() {
-      extract($this->vars)
+      extract($this->vars);
       chdir(dirname($this->template));
       ob_start();
 
@@ -27,7 +27,5 @@
 
       return ob_get_clean();
     }
-
-
   }
  ?>
